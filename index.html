@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>BestBet Pro</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h3>🎯 BestBet - Cobertura Inteligente</h3>
+
+<input id="odd1" placeholder="Odd Aposta 1">
+<input id="stake1" placeholder="Valor Aposta 1">
+
+<button onclick="calcAposta1()">Calcular Aposta 1</button>
+
+<!-- APOSTA 1 -->
+<div class="box">
+<table>
+
+<tr>
+  <th>Retorno</th>
+  <th>Lucro</th>
+</tr>
+
+<tr>
+  <td id="retorno1">0</td>
+  <td id="lucro1">0</td>
+</tr>
+
+</table>
+</div>
+
+<hr>
+
+<select id="percInvest">
+  <option value="">% do lucro reinvestido:</option>
+  <option value="10">10%</option>
+  <option value="20">20%</option>
+  <option value="30">30%</option>
+  <option value="40">40%</option>
+  <option value="50">50%</option>
+  <option value="60">60%</option>
+  <option value="70">70%</option>
+  <option value="80">80%</option>
+  <option value="90">90%</option>
+  <option value="100">100%</option>
+</select>
+
+<!-- SELECT CUSTOM -->
+<div class="custom-select" id="selectLucro">
+  <div class="select-selected">% de lucro desejado</div>
+
+  <div class="select-options">
+    <div data-value="10">10%</div>
+    <div data-value="20">20%</div>
+    <div data-value="30">30%</div>
+    <div data-value="40">40%</div>
+    <div data-value="50">50%</div>
+    <div data-value="60">60%</div>
+    <div data-value="70">70%</div>
+    <div data-value="80">80%</div>
+    <div data-value="90">90%</div>
+    <div data-value="100">100%</div>
+  </div>
+</div>
+
+<button onclick="calcCobertura()">Calcular Cobertura</button>
+<button onclick="limparCampos()" class="btn-clear">Limpar</button>
+
+<!-- COBERTURA -->
+<div class="box">
+<table>
+
+<tr>
+  <th>Stake 2</th>
+  <th>Odd necessária</th>
+  <th>Retorno 2</th>
+  <th>Dificuldade</th>
+</tr>
+
+<tr>
+  <td id="stake2">0</td>
+  <td id="odd2">0</td>
+  <td id="retorno2">0</td>
+  <td id="dificuldade">-</td>
+</tr>
+
+</table>
+</div>
+
+<hr>
+
+<!-- RESULTADOS -->
+<div class="box">
+<table>
+
+<tr>
+  <th>Aposta 1 vence</th>
+  <th>Aposta 2 vence</th>
+  <th>Nível de risco</th>
+</tr>
+
+<tr>
+  <td id="res1">0</td>
+  <td id="res2">0</td>
+  <td id="risco">-</td>
+</tr>
+
+</table>
+</div>
+
+
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
