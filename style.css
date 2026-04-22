@@ -1,3 +1,8 @@
+/* Reset base */
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0;
     height: 100%;
@@ -5,13 +10,12 @@ html, body {
     background: #e5e5e5;
 }
 
-/* 🔥 Layout com margem igual em todos os lados */
+/* 🔥 Layout com espaçamento e sem bug de scroll */
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* 👈 CORREÇÃO PRINCIPAL */
     padding: 12px;
-    box-sizing: border-box;
 }
 
 /* 🔥 Container estilo card */
@@ -27,11 +31,6 @@ body {
         0 4px 10px rgba(0,0,0,0.15);
 
     color: #fff;
-    box-sizing: border-box;
-
-    /* 🔥 evita estourar a tela */
-    max-height: 100%;
-    overflow-y: auto;
 }
 
 /* Título */
@@ -55,7 +54,6 @@ input, select {
     border-radius: 6px;
     background: #2f424c;
     color: #fff;
-    box-sizing: border-box;
 }
 
 /* Botões */
