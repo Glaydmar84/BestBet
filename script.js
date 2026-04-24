@@ -2,7 +2,7 @@ let stake1Global = 0;
 let lucro1Global = 0;
 let selectedLucro = null;
 
-// GERAR SELECT 0-100 (REINVESTIMENTO)
+// GERAR SELECT 0-100
 const percInvestSelect = document.getElementById("percInvest");
 
 let defaultOption = document.createElement("option");
