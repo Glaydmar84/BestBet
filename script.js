@@ -2,23 +2,47 @@ let stake1Global = 0;
 let lucro1Global = 0;
 let selectedLucro = null;
 
-// SELECT CUSTOM
+// GERAR SELECT 0-100 (REINVESTIMENTO)
+const percInvestSelect = document.getElementById("percInvest");
+
+let defaultOption = document.createElement("option");
+defaultOption.value = "";
+defaultOption.text = "% do lucro reinvestido:";
+percInvestSelect.appendChild(defaultOption);
+
+for (let i = 0; i <= 100; i++) {
+    let option = document.createElement("option");
+    option.value = i;
+    option.text = i + "%";
+    percInvestSelect.appendChild(option);
+}
+
+// CUSTOM SELECT
 const select = document.getElementById("selectLucro");
 const selected = select.querySelector(".select-selected");
 const options = select.querySelector(".select-options");
 
+// GERAR 0-100
+for (let i = 0; i <= 100; i++) {
+    let div = document.createElement("div");
+    div.innerText = i + "%";
+    div.setAttribute("data-value", i);
+
+    div.addEventListener("click", () => {
+        selected.innerText = div.innerText;
+        selectedLucro = i;
+        options.classList.remove("show");
+    });
+
+    options.appendChild(div);
+}
+
+// ABRIR / FECHAR
 selected.addEventListener("click", () => {
     options.classList.toggle("show");
 });
 
-options.querySelectorAll("div").forEach(option => {
-    option.addEventListener("click", () => {
-        selected.innerText = option.innerText;
-        selectedLucro = parseFloat(option.getAttribute("data-value"));
-        options.classList.remove("show");
-    });
-});
-
+// FECHAR AO CLICAR FORA
 document.addEventListener("click", (e) => {
     if (!select.contains(e.target)) {
         options.classList.remove("show");
@@ -114,8 +138,6 @@ function limparCampos() {
     document.getElementById("res1").innerText = "0";
     document.getElementById("res2").innerText = "0";
     document.getElementById("risco").innerText = "-";
-
-    document.getElementById("status").innerText = "-";
 
     stake1Global = 0;
     lucro1Global = 0;
